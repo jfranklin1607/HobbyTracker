@@ -13,6 +13,10 @@
 		1D07512E23031687002DDDC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D07512D23031687002DDDC3 /* Assets.xcassets */; };
 		1D07513123031687002DDDC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D07512F23031687002DDDC3 /* LaunchScreen.storyboard */; };
 		1D07513923032CE8002DDDC3 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D07513823032CE8002DDDC3 /* avatar.png */; };
+		1D2AF7CD23046F8F00220530 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AF7CC23046F8F00220530 /* AddFriendViewController.swift */; };
+		1D2AF7CF23046FA200220530 /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AF7CE23046FA200220530 /* FriendDetailViewController.swift */; };
+		1D2AF7D3230471D100220530 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AF7D2230471D100220530 /* Friend.swift */; };
+		1D2AF7D52304764500220530 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2AF7D42304764500220530 /* FriendTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1D07513023031687002DDDC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D07513223031687002DDDC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D07513823032CE8002DDDC3 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = ../../../../../Downloads/avatar.png; sourceTree = "<group>"; };
+		1D2AF7CC23046F8F00220530 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		1D2AF7CE23046FA200220530 /* FriendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
+		1D2AF7D2230471D100220530 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		1D2AF7D42304764500220530 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				1D07513823032CE8002DDDC3 /* avatar.png */,
 				1D07512F23031687002DDDC3 /* LaunchScreen.storyboard */,
 				1D07513223031687002DDDC3 /* Info.plist */,
+				1D2AF7CC23046F8F00220530 /* AddFriendViewController.swift */,
+				1D2AF7CE23046FA200220530 /* FriendDetailViewController.swift */,
+				1D2AF7D2230471D100220530 /* Friend.swift */,
+				1D2AF7D42304764500220530 /* FriendTableViewCell.swift */,
 			);
 			path = HobbyTracker;
 			sourceTree = "<group>";
@@ -139,7 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2AF7CD23046F8F00220530 /* AddFriendViewController.swift in Sources */,
 				1D07512923031685002DDDC3 /* FriendsListViewController.swift in Sources */,
+				1D2AF7CF23046FA200220530 /* FriendDetailViewController.swift in Sources */,
+				1D2AF7D52304764500220530 /* FriendTableViewCell.swift in Sources */,
+				1D2AF7D3230471D100220530 /* Friend.swift in Sources */,
 				1D07512723031685002DDDC3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

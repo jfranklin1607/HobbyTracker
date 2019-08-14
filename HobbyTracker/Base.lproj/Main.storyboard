@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Friend Detail View Controller-->
         <scene sceneID="0cB-kW-dIu">
             <objects>
-                <viewController id="AZf-w5-wTb" sceneMemberID="viewController">
+                <viewController id="AZf-w5-wTb" customClass="FriendDetailViewController" customModule="HobbyTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uMU-Oa-RdE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="-560.49107142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Friend View Controller-->
         <scene sceneID="Nzd-PW-XP0">
             <objects>
-                <viewController id="qOZ-K1-lba" sceneMemberID="viewController">
+                <viewController id="qOZ-K1-lba" customClass="AddFriendViewController" customModule="HobbyTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JEV-gV-ViM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,9 +131,17 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykw-aY-SXd">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem systemItem="cancel" id="45q-Qt-wbu"/>
+                                    <barButtonItem systemItem="cancel" id="45q-Qt-wbu">
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="qOZ-K1-lba" id="qrs-4H-Kpw"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Nc1-dN-B5u"/>
-                                    <barButtonItem systemItem="save" id="Cdw-9b-S1N"/>
+                                    <barButtonItem systemItem="save" id="Cdw-9b-S1N">
+                                        <connections>
+                                            <action selector="saveTapped:" destination="qOZ-K1-lba" id="hg4-O2-FJZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -148,6 +156,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nqQ-HI-c4H"/>
                     </view>
+                    <connections>
+                        <outlet property="hobby1TextField" destination="6ic-9Q-XDS" id="lGt-mt-03k"/>
+                        <outlet property="hobby2TextField" destination="IgQ-R9-mhD" id="Yb0-XG-JBl"/>
+                        <outlet property="hobby3TextField" destination="sWx-Tc-WJV" id="egr-jR-fjd"/>
+                        <outlet property="hometownTextField" destination="90B-yJ-BDx" id="5f5-wI-659"/>
+                        <outlet property="nameTextField" destination="VNm-l3-oZZ" id="WaV-bX-C6K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCz-cd-d6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,7 +180,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4V7-38-zOU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FriendCell" id="4V7-38-zOU" customClass="FriendTableViewCell" customModule="HobbyTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4V7-38-zOU" id="sCt-jv-NdT">
@@ -205,7 +220,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="AZf-w5-wTb" kind="show" id="ddc-s4-31w"/>
+                                            <outlet property="hobbyCountLabel" destination="Fb4-xp-THk" id="oQf-r4-5qy"/>
+                                            <outlet property="homeTownLabel" destination="LL6-Gi-QKU" id="WJ7-QI-Tqn"/>
+                                            <outlet property="nameLabel" destination="V9g-bj-Vyw" id="jmh-f5-uRT"/>
+                                            <segue destination="AZf-w5-wTb" kind="show" identifier="ShowFriendDetailSegue" id="ddc-s4-31w"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -223,10 +241,13 @@
                     <navigationItem key="navigationItem" id="4AT-0A-l18">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jhP-Ae-33T">
                             <connections>
-                                <segue destination="qOZ-K1-lba" kind="presentation" id="rbK-ir-KpY"/>
+                                <segue destination="qOZ-K1-lba" kind="presentation" identifier="AddFriendModalSegue" id="rbK-ir-KpY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="urG-m6-SEt" id="cbb-4u-v8u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="145-cS-9Ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
